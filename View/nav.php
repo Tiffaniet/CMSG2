@@ -5,11 +5,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <?php foreach ($nav as $page):?>
-                    <?php
-//                    $active="";
-//                    if ($_GET["p"] == $page->slug); ?>
-                    <li class="active"><a href="index.php?p=<?=$page->slug?>"><?=$page->title?></a></li>
+                <?php foreach($nav as $page):?>
+                    <li class="<?=isActive($page->slug, $slug)?>"><a href="index.php?p=<?=$page->slug?>"><?=$page->title?></a></li>
                 <?php endforeach;?>
             </ul>
         </div>

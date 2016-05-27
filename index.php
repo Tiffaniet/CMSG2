@@ -9,5 +9,14 @@ try{
 } catch(PDOException $e){
     die($e->getMessage());
 }
+function isActive($value1, $value2)
+{
+    if ($value1 == $value2) {
+        return 'active';
+    } else {
+        return '';
+    }
+}
+
 $page = new \Controller\PageController($pdo);
 $page->displayAction();
