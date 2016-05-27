@@ -25,6 +25,14 @@ class PageController
      */
     public function ajoutAction()
     {
+        if(count($_POST)=== 0 ){
+            //formulaire
+            //affichage de vue
+
+        }else {
+            //traitement formulaire
+            //sauvegarde de la nouvelle vue
+        }
     }
 
     /**
