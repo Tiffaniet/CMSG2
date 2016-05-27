@@ -1,11 +1,6 @@
 <?php
 namespace Model;
 
-/**
- * Class Pagerepository
- * @author Yann Le Scouarnec <yann.le-scouarnec@hetic.net>
- * @package Model
- */
 class PageRepository
 {
 
@@ -38,4 +33,24 @@ class PageRepository
         $stmt->execute();
         return $stmt->fetchObject();
     }
+//    recuperer une page par rapport au slug
+    public function getPages()
+    {
+        $sql = "
+        SELECT
+          `slug`,
+          `title`
+        FROM
+          `page`
+        ";
+        $stmt = $this->PDO->prepare($sql);
+        $stmt->execute();
+//        fetch obj correspond au type du retour que l'on souhaite ici title et slug
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    }
 }
+
+//PageRepository va récupérer des données envoyer au controller
+
+//fetch permet de prendre le dernier résultat qui n'a pas été traiter
+// fetch all va prendre toutes les données du tableau

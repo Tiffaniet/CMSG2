@@ -3,11 +3,7 @@ namespace Controller;
 
 use Model\PageRepository;
 
-/**
- * Class PageController
- * @author Yann Le Scouarnec <yann.le-scouarnec@hetic.net>
- * @package Controller
- */
+
 class PageController
 {
     /**
@@ -72,7 +68,7 @@ class PageController
             $slug = 'teletubbies';
         }
         // recuperation de la navigation
-        $nav = $this->getNav();
+        $nav = $this->getNav($slug);
         // recuperation des donnees de la page demandee
         $page = $this->repository->getSlug($slug);
         // si les donnees sont false, pas de page correspondant
@@ -91,8 +87,10 @@ class PageController
      * recuperation de la nav a partir d'une vue
      * @return string
      */
-    private function getNav()
+    private function getNav($slug)
     {
+        $nav = $this->repository->getPages();
+
         // capture de l'output et placement dans l'output buffer (ob)
         ob_start();
         // inclusion de la vue de nav
@@ -103,3 +101,5 @@ class PageController
     }
 
 }
+
+// donner recuperer et ré-envoyer au view
