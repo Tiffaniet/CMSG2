@@ -50,7 +50,7 @@ class PageController
     }
 
     /**
-     *
+
      */
     public function detailsAction()
     {
@@ -61,11 +61,18 @@ class PageController
      */
     public function listeAction()
     {
+        //id slug et title dans data
+        //$data va stocker les pages qui sont renvoyées par le repository
+        $data = $this->repository->getPages();
+
+        require "View/admin/listePage.php";
     }
 
     /**
      *
      */
+
+    //permet de générer les pages
     public function displayAction()
     {
 //      $slug = $_GET['p'] ?? $_POST['p'] ?? 'teletubbies';
