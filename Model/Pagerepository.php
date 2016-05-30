@@ -57,7 +57,7 @@ class PageRepository
 //fetch permet de prendre le dernier résultat qui n'a pas été traiter
 // fetch all va prendre toutes les données du tableau
 
-    public function ajout()
+    public function ajout($data)
 {
     $sql="
         INSERT
@@ -67,22 +67,18 @@ class PageRepository
         `h1`,
         `body`,
         `title`,
-        `img`,
-        `span_text`,
-        `span_class`)
-        VALUES (:slug, :h1, :body, :title, :img, :span_text,:span_class)";
+        `img`)
+        VALUES (:slug, :h1, :body, :title, :img)";
 
 
     $stmt = $this->PDO->prepare($sql);
-    $stmt->bindParam(':slug', $slug, \PDO::PARAM_STR);
-    $stmt->bindParam(':h1', $h1, \PDO::PARAM_STR);
-    $stmt->bindParam(':body', $body, \PDO::PARAM_STR);
-    $stmt->bindParam(':title', $title, \PDO::PARAM_STR);
-    $stmt->bindParam(':img', $img, \PDO::PARAM_STR);
-    $stmt->bindParam(':span_text', $span_text, \PDO::PARAM_STR);
-    $stmt->bindParam(':span_class', $span_class, \PDO::PARAM_STR);
+    $stmt->bindParam(':slug', $data['page_slug'], \PDO::PARAM_STR);
+    $stmt->bindParam(':h1', $data['page_h1'], \PDO::PARAM_STR);
+    $stmt->bindParam(':body', $data['page_body'], \PDO::PARAM_STR);
+    $stmt->bindParam(':title', $data['page_title'], \PDO::PARAM_STR);
+        $stmt->bindParam(':img', $data['page_img'], \PDO::PARAM_STR);
     $stmt->execute();
-    return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    return $this->PDO->lastInsertId(); // insert le dernier id
 
 }
 
@@ -107,16 +103,23 @@ class PageRepository
         }
 
 
-//    public function supprimer()
+//    public function supprimer($id)
 //    {
 //        $sql="
 //        DELETE
 //        FROM
 //        `page`
 //        WHERE
-//        1";
-//        }
+//        `id`= :id
+//        ";
 //
+//        $stmt = $this->PDO->prepare($sql);
+//        $stmt->bindParam(':id', $id);
+//        $stmt->execute();
+//        return $stmt->fetchObject();
+//        }
+
+
 //    public function modifier()
 //    {
 //        $sql="

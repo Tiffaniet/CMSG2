@@ -35,6 +35,7 @@
             <th>Slug</th>
             <th>Titre</th>
 
+
         </tr>
 
             <tr>

@@ -28,7 +28,6 @@
 </nav>
 <div class="container theme-showcase" role="main">
     <h1>Ajouter une page</h1>
-
     <form action="/admin/index.php?a=ajouter" method="post" style="width: 400px;">
         <fieldset class="form-group">
             <label for="formGroupExampleInput">Slug</label>
@@ -49,14 +48,6 @@
         <fieldset class="form-group">
             <label for="formGroupExampleInput">Img</label>
             <input type="text" class="form-control" name="page_img" placeholder="img/img.png">
-        </fieldset>
-        <fieldset class="form-group">
-            <label for="formGroupExampleInput">Span class</label>
-            <input type="text" class="form-control" name="page_span-class" placeholder="nom-class">
-        </fieldset>
-        <fieldset class="form-group">
-            <label for="formGroupExampleInput">Span text</label>
-            <input type="text" class="form-control" name="page_span-text" placeholder="Contenu du span">
         </fieldset>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

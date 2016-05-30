@@ -29,23 +29,30 @@ class PageController
         if(count($_POST) === 0) {
             // formulaire
             // affichage de vue
-
+            require "View/admin/ajouterPage.php";
         } else {
             // traitement de formulaire
+            $data = $this->repository->ajout($_POST);
             // sauvegarde de la nouvelle page
+            // redirection
+
         }
-        $data = $this->repository->ajout();
-        require "View/admin/ajouterPage.php";
 
     }
 
     /**
      *
      */
-    public function supprimerAction()
-    {
-
-    }
+//    public function supprimerAction()
+//    {
+//        if(!isset($_GET['id'])) {
+//            throw new\Exception('Merci de mettre une id dans l url');
+//        }
+//        $id = $_GET['id'];
+//        $data = $this->repository->supprimer($id);
+//
+//        include "View/admin/supprimerPage.php";
+//    }
 
     /**
      *

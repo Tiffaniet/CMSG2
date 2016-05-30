@@ -55,7 +55,7 @@ ALTER TABLE `page`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUT@O_INCREMENT for dumped tables
 --
 
 --
