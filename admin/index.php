@@ -2,9 +2,9 @@
 //ca prend le repertoire courant ca le passe dirname qui renvoie le répertoire parent
 //ce repertoire parent devient le repertoire de travail du script avec chdir
 //ce qui nous permet de faire des include comme si on était dans le répertoire racine et non pas dans /admin
-chdir($rootDir =  dirname(__DIR__));
+chdir($rootDir = dirname(__DIR__)); // dans dir ya /admin et tout le chemin
 require_once "init.php";
-$page = new \Controller\PageController($pdo);
+$page = new \Controller\PageController($pdo); //prend la connexion en parametre
 switch($_GET['a']){
     case "ajouter":
         $page->ajoutAction();

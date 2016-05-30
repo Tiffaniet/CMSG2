@@ -52,8 +52,17 @@ class PageController
     /**
 
      */
-    public function detailsAction()
-    {
+    public function detailsAction($id)
+
+        {   if(isset($_GET['id'])) {
+            $id = $_GET['id'];
+    }
+
+        $data = $this->repository->details($id);
+
+
+
+        require "View/admin/detailsPage.php";
     }
 
     /**

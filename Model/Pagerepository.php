@@ -58,8 +58,8 @@ class PageRepository
 // fetch all va prendre toutes les données du tableau
 
     public function ajouter()
-    {
-        $sql="
+{
+    $sql="
         INSERT
         INTO
         `page`
@@ -73,37 +73,59 @@ class PageRepository
         VALUES (:slug,:h1,:body,:title,:img,:span_text,:span_class)";
 
 
-        $stmt = $this->PDO->prepare($sql);
-        $stmt->bindParam(':slug', $slug, \PDO::PARAM_p);
-        $stmt->execute();
+    $stmt = $this->PDO->prepare($sql);
+    $stmt->bindParam(':slug', $slug, \PDO::PARAM_STR);
+    $stmt->execute();
 
 }
 
-    public function supprimer()
+    public function details($id)
     {
-        $sql="
-        DELETE
+        $sql = "
+       SELECT
+          `slug`,
+          `title`,
+          `id`
         FROM
-        `page`
-        WHERE
-        1";
-        }
+          `page`
 
-    public function modifier()
-    {
-        $sql="
-        UPDATE
-        `page`
-        SET
-        `id`=[:id],
-        `slug`=[:slug],
-        `h1`=[:h1],
-        `body`=[:body,
-        `title`=[:title],
-        `img`=[:img],
-        `span_text`=[:span_text],
-        `span_class`=[:span_class]
         WHERE
-        1";
+          `id`= :id
+        ";
+        $stmt = $this->PDO->prepare($sql);
+        $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
+        $stmt->execute();
+
+//        fetch obj correspond au type du retour que l'on souhaite ici title et slug
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
+
     }
+
+//    pu@blic function supprimer()
+//    {
+//        $sql="
+//        DELETE
+//        FROM
+//        `page`
+//        WHERE
+//        1";
+//        }
+//
+//    public function modifier()
+//    {
+//        $sql="
+//        UPDATE
+//        `page`
+//        SET
+//        `id`=[:id],
+//        `slug`=[:slug],
+//        `h1`=[:h1],
+//        `body`=[:body,
+//        `title`=[:title],
+//        `img`=[:img],
+//        `span_text`=[:span_text],
+//        `span_class`=[:span_class]
+//        WHERE
+//        1";
+//    }
 }
