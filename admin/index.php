@@ -5,6 +5,8 @@
 chdir($rootDir = dirname(__DIR__)); // dans dir ya /admin et tout le chemin
 require_once "init.php";
 $page = new \Controller\PageController($pdo); //prend la connexion en parametre
+
+
 switch($_GET['a']){
     case "ajouter":
         $page->ajoutAction();

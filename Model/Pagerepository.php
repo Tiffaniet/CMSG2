@@ -57,7 +57,7 @@ class PageRepository
 //fetch permet de prendre le dernier résultat qui n'a pas été traiter
 // fetch all va prendre toutes les données du tableau
 
-    public function ajouter()
+    public function ajout()
 {
     $sql="
         INSERT
@@ -70,12 +70,19 @@ class PageRepository
         `img`,
         `span_text`,
         `span_class`)
-        VALUES (:slug,:h1,:body,:title,:img,:span_text,:span_class)";
+        VALUES (:slug, :h1, :body, :title, :img, :span_text,:span_class)";
 
 
     $stmt = $this->PDO->prepare($sql);
     $stmt->bindParam(':slug', $slug, \PDO::PARAM_STR);
+    $stmt->bindParam(':h1', $h1, \PDO::PARAM_STR);
+    $stmt->bindParam(':body', $body, \PDO::PARAM_STR);
+    $stmt->bindParam(':title', $title, \PDO::PARAM_STR);
+    $stmt->bindParam(':img', $img, \PDO::PARAM_STR);
+    $stmt->bindParam(':span_text', $span_text, \PDO::PARAM_STR);
+    $stmt->bindParam(':span_class', $span_class, \PDO::PARAM_STR);
     $stmt->execute();
+    return $stmt->fetchAll(\PDO::FETCH_OBJ);
 
 }
 
@@ -92,16 +99,15 @@ class PageRepository
         WHERE
           `id`= :id
         ";
+
         $stmt = $this->PDO->prepare($sql);
-        $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id);
         $stmt->execute();
+        return $stmt->fetchObject();
+        }
 
-//        fetch obj correspond au type du retour que l'on souhaite ici title et slug
-        return $stmt->fetchAll(\PDO::FETCH_OBJ);
 
-    }
-
-//    pu@blic function supprimer()
+//    public function supprimer()
 //    {
 //        $sql="
 //        DELETE

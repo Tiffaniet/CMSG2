@@ -16,6 +16,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
+            <a class="navbar-brand" href ="/index.php">Front Office</a>
             <a class="navbar-brand" href="">Back Office</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -27,7 +28,7 @@
 </nav>
 <div class="container theme-showcase" role="main">
     <h1>Pages</h1>
-    <a href="">+</a>
+    <a href="?a=ajouter">Ajouter une page</a>
     <table class="table-bordered table-responsive table">
         <tr>
             <th>ID</th>
@@ -49,7 +50,6 @@
         <?php endforeach;?>
 
     </table>
-    <a href="">+</a>
 </div>
 </body>
 </html>

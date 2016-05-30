@@ -23,16 +23,20 @@ class PageController
     /**
      *
      */
+
     public function ajoutAction()
     {
-        if(count($_POST)=== 0 ){
-            //formulaire
-            //affichage de vue
+        if(count($_POST) === 0) {
+            // formulaire
+            // affichage de vue
 
-        }else {
-            //traitement formulaire
-            //sauvegarde de la nouvelle vue
+        } else {
+            // traitement de formulaire
+            // sauvegarde de la nouvelle page
         }
+        $data = $this->repository->ajout();
+        require "View/admin/ajouterPage.php";
+
     }
 
     /**
@@ -40,6 +44,7 @@ class PageController
      */
     public function supprimerAction()
     {
+
     }
 
     /**
@@ -52,22 +57,24 @@ class PageController
     /**
 
      */
-    public function detailsAction($id)
-
-        {   if(isset($_GET['id'])) {
-            $id = $_GET['id'];
-    }
-
+    public function detailsAction()
+    {
+        if(!isset($_GET['id'])) {
+                throw new\Exception('Merci de mettre une id dans l url');
+        }
+        $id = $_GET['id'];
         $data = $this->repository->details($id);
 
-
-
-        require "View/admin/detailsPage.php";
+        if($data === false) {
+            include "View/admin/detailsPageError.php";
+            return;
+        }
+        include "View/admin/detailsPage.php";
     }
-
     /**
      *
      */
+
     public function listeAction()
     {
         //id slug et title dans data
