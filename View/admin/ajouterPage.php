@@ -34,16 +34,16 @@
             <input type="text" class="form-control" name="page_slug" placeholder="slug">
         </fieldset>
         <fieldset class="form-group">
+            <label for="formGroupExampleInput">Title</label>
+            <input type="text" class="form-control" name="page_title" placeholder="Title">
+        </fieldset>
+        <fieldset class="form-group">
             <label for="formGroupExampleInput">h1</label>
             <input type="text" class="form-control" name="page_h1" placeholder="h1">
         </fieldset>
         <fieldset class="form-group">
             <label for="exampleTextarea">Body</label>
             <textarea class="form-control" name="page_body" rows="3" placeholder="Du texte ici"></textarea>
-        </fieldset>
-        <fieldset class="form-group">
-            <label for="formGroupExampleInput">Title</label>
-            <input type="text" class="form-control" name="page_title" placeholder="Title">
         </fieldset>
         <fieldset class="form-group">
             <label for="formGroupExampleInput">Img</label>

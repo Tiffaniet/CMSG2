@@ -35,7 +35,7 @@ class PageController
             $data = $this->repository->ajout($_POST);
             // sauvegarde de la nouvelle page
             // redirection
-            header('Location: index.php');
+            header('Location: index.php?a=details&id='.$data);
             exit();
         }
 
