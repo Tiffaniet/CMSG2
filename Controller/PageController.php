@@ -26,7 +26,7 @@ class PageController
 
     public function ajoutAction()
     {
-        if(count($_POST) === 0) {
+        if (count($_POST) === 0) {
             // formulaire
             // affichage de vue
             require "View/admin/ajouterPage.php";
@@ -35,8 +35,7 @@ class PageController
             $data = $this->repository->ajout($_POST);
             // sauvegarde de la nouvelle page
             // redirection
-
-            header('Location: admin');
+            header('Location: index.php');
             exit();
         }
 
@@ -48,9 +47,14 @@ class PageController
 
     public function supprimerAction()
     {
-        $data = $this->repository->supprimer($id);
-
-        include "View/admin/supprimerPage.php";
+        if (!isset($_GET['id'])) {
+            throw new\Exception('Merci de mettre une id dans l url');
+        }
+        $id = $_GET['id'];
+        $this->repository->supprimer($id);
+        //redirection
+        header('Location: index.php');
+        exit();
     }
 
     /**
@@ -62,22 +66,22 @@ class PageController
     }
 
     /**
-
      */
     public function detailsAction()
     {
-        if(!isset($_GET['id'])) {
-                throw new\Exception('Merci de mettre une id dans l url');
+        if (!isset($_GET['id'])) {
+            throw new\Exception('Merci de mettre une id dans l url');
         }
         $id = $_GET['id'];
         $data = $this->repository->details($id);
 
-        if($data === false) {
+        if ($data === false) {
             include "View/admin/detailsPageError.php";
             return;
         }
         include "View/admin/detailsPage.php";
     }
+
     /**
      *
      */

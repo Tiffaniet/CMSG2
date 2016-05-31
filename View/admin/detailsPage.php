@@ -17,7 +17,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href ="/index.php">Front Office</a>
+            <a class="navbar-brand" href="/index.php">Front Office</a>
             <a class="navbar-brand" href="../admin">Back Office</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -34,16 +34,21 @@
             <th>ID</th>
             <th>Slug</th>
             <th>Titre</th>
-
-
+            <th>body</th>
+            <th>span_text</th>
+            <th>span_class</th>
+            <th>img</th>
         </tr>
 
-            <tr>
-                <td><?= $data->id?></td>
-                <td><?= $data->slug?></td>
-                <td><?= $data->title?></td
-
-            </tr>
+        <tr>
+            <td><?= $data->id ?></td>
+            <td><?= $data->slug ?></td>
+            <td><?= $data->title ?></td>
+            <td><?= $data->body ?></td>
+            <td><?= $data->span_text ?></td>
+            <td><?= $data->span_class ?></td>
+            <td><?= $data->img ?></td>
+        </tr>
     </table>
 </div>
 </body>

@@ -16,7 +16,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href ="/index.php">Front Office</a>
+            <a class="navbar-brand" href="/index.php">Front Office</a>
             <a class="navbar-brand" href="../admin">Back Office</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -35,7 +35,7 @@
         </fieldset>
         <fieldset class="form-group">
             <label for="formGroupExampleInput">h1</label>
-            <input type="text" class="form-control" name="page_h1" placeholder="h1" >
+            <input type="text" class="form-control" name="page_h1" placeholder="h1">
         </fieldset>
         <fieldset class="form-group">
             <label for="exampleTextarea">Body</label>
@@ -48,6 +48,15 @@
         <fieldset class="form-group">
             <label for="formGroupExampleInput">Img</label>
             <input type="text" class="form-control" name="page_img" placeholder="img/img.png">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="formGroupExampleInput">Description</label>
+            <input type="text" class="form-control" name="span_text" placeholder="description">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="formGroupExampleInput">État</label>
+            <input type="text" class="form-control" name="span_class"
+                   placeholder="default, primary, success, info, warning">
         </fieldset>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

@@ -20,12 +20,15 @@ class PageRepository
     public function getSlug($slug)
     {
         $sql = "
-        SELECT 
-          `body`, 
-          `title`
-        FROM 
-          `page` 
-        WHERE 
+        SELECT
+          `body`,
+          `title`,
+          `img`,
+          `span_text`,
+          `span_class`
+        FROM
+          `page`
+        WHERE
           `slug` = :slug
         ";
         $stmt = $this->PDO->prepare($sql);
@@ -58,8 +61,8 @@ class PageRepository
 // fetch all va prendre toutes les données du tableau
 
     public function ajout($data)
-{
-    $sql="
+    {
+        $sql = "
         INSERT
         INTO
         `page`
@@ -67,20 +70,23 @@ class PageRepository
         `h1`,
         `body`,
         `title`,
-        `img`)
-        VALUES (:slug, :h1, :body, :title, :img)";
+        `img`,
+        `span_text`,
+        `span_class`)
+        VALUES (:slug, :h1, :body, :title, :img, :span_text, :span_class)";
 
 
-    $stmt = $this->PDO->prepare($sql);
-    $stmt->bindParam(':slug', $data['page_slug'], \PDO::PARAM_STR);
-    $stmt->bindParam(':h1', $data['page_h1'], \PDO::PARAM_STR);
-    $stmt->bindParam(':body', $data['page_body'], \PDO::PARAM_STR);
-    $stmt->bindParam(':title', $data['page_title'], \PDO::PARAM_STR);
-    $stmt->bindParam(':img', $data['page_img'], \PDO::PARAM_STR);
-    $stmt->execute();
-    return $this->PDO->lastInsertId();
-
-}
+        $stmt = $this->PDO->prepare($sql);
+        $stmt->bindParam(':slug', $data['page_slug'], \PDO::PARAM_STR);
+        $stmt->bindParam(':h1', $data['page_h1'], \PDO::PARAM_STR);
+        $stmt->bindParam(':body', $data['page_body'], \PDO::PARAM_STR);
+        $stmt->bindParam(':title', $data['page_title'], \PDO::PARAM_STR);
+        $stmt->bindParam(':img', $data['page_img'], \PDO::PARAM_STR);
+        $stmt->bindParam(':span_text', $data['span_text'], \PDO::PARAM_STR);
+        $stmt->bindParam(':span_class', $data['span_class'], \PDO::PARAM_STR);
+        $stmt->execute();
+        return $this->PDO->lastInsertId();
+    }
 
     public function details($id)
     {
@@ -88,7 +94,11 @@ class PageRepository
        SELECT
           `slug`,
           `title`,
-          `id`
+          `id`,
+          `body`,
+          `span_text`,
+          `span_class`,
+          `img`
         FROM
           `page`
 
@@ -100,24 +110,23 @@ class PageRepository
         $stmt->bindParam(':id', $id);
         $stmt->execute();
         return $stmt->fetchObject();
-        }
+    }
 
 
-//    public function supprimer($id)
-//    {
-//        $sql="
-//        DELETE
-//        FROM
-//        `page`
-//        WHERE
-//        `id`= :id
-//        ";
-//
-//        $stmt = $this->PDO->prepare($sql);
-//        $stmt->bindParam(':id', $id);
-//        $stmt->execute();
-//        return $stmt->fetchObject();
-//        }
+    public function supprimer($id)
+    {
+        $sql = "
+        DELETE
+        FROM
+          `page`
+        WHERE
+          `id`= :id
+        ";
+
+        $stmt = $this->PDO->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
 
 
 //    public function modifier()
