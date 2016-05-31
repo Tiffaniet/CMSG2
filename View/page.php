@@ -15,7 +15,7 @@
 <?=$nav?>
 <div class="container theme-showcase" role="main">
     <div class="jumbotron">
-        <h1><?=$page->title?></h1>
+        <h1><?=$page->h1?></h1>
         <p><?=$page->body?></p>
       <span class="label label-<?=$page->span_class?>"><?=$page->span_text?></span>
     </div>

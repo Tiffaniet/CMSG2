@@ -25,7 +25,8 @@ class PageRepository
           `title`,
           `img`,
           `span_text`,
-          `span_class`
+          `span_class`,
+          `h1`
         FROM
           `page`
         WHERE
@@ -98,7 +99,8 @@ class PageRepository
           `body`,
           `span_text`,
           `span_class`,
-          `img`
+          `img`,
+          `h1`
         FROM
           `page`
 
@@ -129,21 +131,33 @@ class PageRepository
     }
 
 
-//    public function modifier()
-//    {
-//        $sql="
-//        UPDATE
-//        `page`
-//        SET
-//        `id`=[:id],
-//        `slug`=[:slug],
-//        `h1`=[:h1],
-//        `body`=[:body,
-//        `title`=[:title],
-//        `img`=[:img],
-//        `span_text`=[:span_text],
-//        `span_class`=[:span_class]
-//        WHERE
-//        1";
-//    }
+    public function modifier($data)
+    {
+        $sql="
+        UPDATE
+        `page`
+        SET
+        `slug`=:slug,
+        `h1`=:h1,
+        `body`=:body,
+        `title`=:title,
+        `img`=:img,
+        `span_text`=:span_text,
+        `span_class`=:span_class
+        WHERE
+          `id`= :id
+          ";
+        $stmt = $this->PDO->prepare($sql);
+        //bindvalue va prendre en compte tout les valeurs comme en dur ou pas
+        $stmt->bindValue(':slug', $data['page_slug'], \PDO::PARAM_STR);
+        $stmt->bindValue(':h1', $data['page_h1'], \PDO::PARAM_STR);
+        $stmt->bindValue(':body', $data['page_body'], \PDO::PARAM_STR);
+        $stmt->bindValue(':title', $data['page_title'], \PDO::PARAM_STR);
+        $stmt->bindValue(':img', $data['page_img'], \PDO::PARAM_STR);
+        $stmt->bindValue(':span_text', $data['span_text'], \PDO::PARAM_STR);
+        $stmt->bindValue(':span_class', $data['span_class'], \PDO::PARAM_STR);
+        $stmt->bindValue(':id', $data['page_id'], \PDO::PARAM_INT);
+
+        $stmt->execute();
+    }
 }

@@ -62,9 +62,25 @@ class PageController
      */
     public function modifierAction()
     {
+        if (count($_POST) === 0) {
+            // formulaire
+            // affichage de vue
+            if (!isset($_GET['id'])) {
+                throw new\Exception('Merci de mettre une id dans l url');
+            }
+            $id = $_GET['id'];
+            $data = $this->repository->details($id);
 
+            require "View/admin/modifierPage.php";
+        } else {
+            // traitement de formulaire
+            $data = $this->repository->modifier($_POST);
+            // sauvegarde de la nouvelle page
+            // redirection
+            header('Location: index.php');
+            exit();
+        }
     }
-
     /**
      */
     public function detailsAction()

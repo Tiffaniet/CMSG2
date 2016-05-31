@@ -34,20 +34,24 @@
             <th>ID</th>
             <th>Slug</th>
             <th>Titre</th>
+            <th>h1</th>
             <th>body</th>
             <th>span_text</th>
             <th>span_class</th>
             <th>img</th>
+
         </tr>
 
         <tr>
             <td><?= $data->id ?></td>
             <td><?= $data->slug ?></td>
             <td><?= $data->title ?></td>
+            <td><?= $data->h1 ?></td>
             <td><?= $data->body ?></td>
             <td><?= $data->span_text ?></td>
             <td><?= $data->span_class ?></td>
             <td><?= $data->img ?></td>
+
         </tr>
     </table>
 </div>
