@@ -36,6 +36,8 @@ class PageController
             // sauvegarde de la nouvelle page
             // redirection
 
+            header('Location: admin');
+            exit();
         }
 
     }
@@ -43,22 +45,20 @@ class PageController
     /**
      *
      */
-//    public function supprimerAction()
-//    {
-//        if(!isset($_GET['id'])) {
-//            throw new\Exception('Merci de mettre une id dans l url');
-//        }
-//        $id = $_GET['id'];
-//        $data = $this->repository->supprimer($id);
-//
-//        include "View/admin/supprimerPage.php";
-//    }
+
+    public function supprimerAction()
+    {
+        $data = $this->repository->supprimer($id);
+
+        include "View/admin/supprimerPage.php";
+    }
 
     /**
      *
      */
     public function modifierAction()
     {
+
     }
 
     /**

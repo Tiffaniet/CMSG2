@@ -76,9 +76,9 @@ class PageRepository
     $stmt->bindParam(':h1', $data['page_h1'], \PDO::PARAM_STR);
     $stmt->bindParam(':body', $data['page_body'], \PDO::PARAM_STR);
     $stmt->bindParam(':title', $data['page_title'], \PDO::PARAM_STR);
-        $stmt->bindParam(':img', $data['page_img'], \PDO::PARAM_STR);
+    $stmt->bindParam(':img', $data['page_img'], \PDO::PARAM_STR);
     $stmt->execute();
-    return $this->PDO->lastInsertId(); // insert le dernier id
+    return $this->PDO->lastInsertId();
 
 }
 
