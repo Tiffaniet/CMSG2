@@ -10,7 +10,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
 <div class="container theme-showcase" role="main">
     <div class="jumbotron">
-        <h1>Requete non trouv&eacute;e</h1>
+        <h1>Requête non trouv&eacute;e</h1>
     </div>
 </div>
 </body>

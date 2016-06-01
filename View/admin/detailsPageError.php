@@ -27,7 +27,7 @@
     </div>
 </nav>
 <div class="container theme-showcase" role="main">
-    <h1>Détails de la page</h1>
+    <h1>Veuillez saisir une id valide</h1>
     <span class="danger">ERROR !</span>
 </div>
 </body>
