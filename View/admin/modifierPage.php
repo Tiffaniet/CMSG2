@@ -27,7 +27,7 @@
     </div>
 </nav>
 <div class="container theme-showcase" role="main">
-    <h1>Modifier une page</h1>
+    <h1>Modifier la page : <?=$data->h1?></h1>
     <form action="/admin/index.php?a=modifier" method="post" style="width: 400px;">
         <!-- permet de cacher l'input et de recuperer la valeur -->
         <input type="hidden" name="page_id" value="<?= $data->id ?>" />

@@ -58,16 +58,16 @@ if($data !== false){
         <pre><?=htmlentities($data->body)?></pre>
         </p>
         <p>
-            <span class="label label-default">img</span><br/>
-            <img src="../<?=$data->img?>">
-        </p>
-        <p>
             <span class="label label-default">Description</span><br/>
             <?=$data->span_text?>
         </p>
         <p>
             <span class="label label-default">&Eacute;tat</span><br/>
             <?=$data->span_class?>
+        </p>
+        <p>
+            <span class="label label-default">img</span><br/>
+            <img src="../<?=$data->img?>">
         </p>
     <?php else: ?>
         <p>

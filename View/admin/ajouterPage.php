@@ -35,7 +35,7 @@
         </fieldset>
         <fieldset class="form-group">
             <label for="formGroupExampleInput">Title</label>
-            <input type="text" class="form-control" name="page_title" placeholder="Title">
+            <input type="text" class="form-control" name="page_title" placeholder="title">
         </fieldset>
         <fieldset class="form-group">
             <label for="formGroupExampleInput">h1</label>
@@ -46,17 +46,17 @@
             <textarea class="form-control" name="page_body" rows="3" placeholder="Du texte ici"></textarea>
         </fieldset>
         <fieldset class="form-group">
-            <label for="formGroupExampleInput">Img</label>
-            <input type="text" class="form-control" name="page_img" placeholder="img/img.png">
-        </fieldset>
-        <fieldset class="form-group">
             <label for="formGroupExampleInput">Description</label>
             <input type="text" class="form-control" name="span_text" placeholder="description">
         </fieldset>
-        <fieldset class="form-group">
+        <fieldset class="form-group"
             <label for="formGroupExampleInput">État</label>
             <input type="text" class="form-control" name="span_class"
                    placeholder="default, primary, success, info, warning">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="formGroupExampleInput">Img</label>
+            <input type="text" class="form-control" name="page_img" placeholder="img/img.png">
         </fieldset>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
