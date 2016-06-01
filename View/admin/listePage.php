@@ -28,8 +28,10 @@
 </nav>
 <div class="container theme-showcase" role="main">
     <h1>Liste des pages</h1>
+    <br/>
     <a href="?a=ajouter">Ajouter une page</a>
     <table class="table-bordered table-responsive table">
+
         <tr>
             <th>ID</th>
             <th>Slug</th>
@@ -42,8 +44,8 @@
                 <td><?= $page->slug ?></td>
                 <td><?= $page->title ?></td>
                 <td>
-                    <a href="/admin/index.php?a=details&id=<?= $page->id ?>">Détails</a>
-                    <a href="/admin/index.php?a=modifier&id=<?= $page->id ?>">Modifier</a>
+                    <a href="/admin/index.php?a=details&id=<?= $page->id ?>">Détails</a> -
+                    <a href="/admin/index.php?a=modifier&id=<?= $page->id ?>">Modifier</a> -
                     <a href="/admin/index.php?a=supprimer&id=<?= $page->id ?>">Supprimer</a>
                 </td>
             </tr>

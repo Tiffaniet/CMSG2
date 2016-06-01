@@ -38,7 +38,7 @@ if($data !== false){
     <h1>Détails de la page : <?=$data->h1?></h1>
     <?php if($data !== false):?>
         <p>
-            <span class="label label-default">id</span><br/>
+            <span class="label label-default">ID</span><br/>
             <?=$data->id?>
         </p>
         <p>

@@ -49,10 +49,9 @@
             <label for="formGroupExampleInput">Description</label>
             <input type="text" class="form-control" name="span_text" placeholder="description">
         </fieldset>
-        <fieldset class="form-group"
-            <label for="formGroupExampleInput">État</label>
-            <input type="text" class="form-control" name="span_class"
-                   placeholder="default, primary, success, info, warning">
+        <fieldset class="form-group">
+            <label for="formGroupExampleInput">Etat</label>
+            <input type="text" class="form-control" name="span_text" placeholder="primary, success, info, warning, danger">
         </fieldset>
         <fieldset class="form-group">
             <label for="formGroupExampleInput">Img</label>
