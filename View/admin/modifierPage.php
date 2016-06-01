@@ -27,10 +27,10 @@
     </div>
 </nav>
 <div class="container theme-showcase" role="main">
-    <h1>Modifier la page : <?=$data->h1?></h1>
+    <h1>Modifier la page : <?= $data->h1 ?></h1>
     <form action="/admin/index.php?a=modifier" method="post" style="width: 400px;">
         <!-- permet de cacher l'input et de recuperer la valeur -->
-        <input type="hidden" name="page_id" value="<?= $data->id ?>" />
+        <input type="hidden" name="page_id" value="<?= $data->id ?>"/>
         <fieldset class="form-group">
             <label for="formGroupExampleInput">Slug</label>
             <input type="text" class="form-control" name="page_slug" placeholder="slug" value="<?= $data->slug ?>">
@@ -41,7 +41,8 @@
         </fieldset>
         <fieldset class="form-group">
             <label for="exampleTextarea">Body</label>
-            <textarea class="form-control" name="page_body" rows="3" placeholder="Du texte ici"><?= $data->body ?></textarea>
+            <textarea class="form-control" name="page_body" rows="3"
+                      placeholder="Du texte ici"><?= $data->body ?></textarea>
         </fieldset>
         <fieldset class="form-group">
             <label for="formGroupExampleInput">Title</label>
@@ -53,11 +54,13 @@
         </fieldset>
         <fieldset class="form-group">
             <label for="formGroupExampleInput">Description</label>
-            <input type="text" class="form-control" name="span_text" placeholder="description" value="<?= $data->span_text ?>">
+            <input type="text" class="form-control" name="span_text" placeholder="description"
+                   value="<?= $data->span_text ?>">
         </fieldset>
         <fieldset class="form-group">
             <label for="formGroupExampleInput">État</label>
-            <input type="text" class="form-control" name="span_class" placeholder="default, primary, success, info, warning" value="<?= $data->span_class ?>">
+            <input type="text" class="form-control" name="span_class"
+                   placeholder="default, primary, success, info, warning" value="<?= $data->span_class ?>">
         </fieldset>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

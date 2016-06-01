@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?=$page->title?></title>
+    <title><?= $page->title ?></title>
     <style>
-        body{
+        body {
             padding-top: 70px;
         }
     </style>
@@ -12,14 +12,14 @@
     <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 </head>
 <body role="document">
-<?=$nav?>
+<?= $nav ?>
 <div class="container theme-showcase" role="main">
     <div class="jumbotron">
-        <h1><?=$page->h1?></h1>
-        <p><?=$page->body?></p>
-      <span class="label label-<?=$page->span_class?>"><?=$page->span_text?></span>
+        <h1><?= $page->h1 ?></h1>
+        <p><?= $page->body ?></p>
+        <span class="label label-<?= $page->span_class ?>"><?= $page->span_text ?></span>
     </div>
-    <img class="img-thumbnail" alt="" src="<?=$page->img?>" data-holder-rendered="true">
+    <img class="img-thumbnail" alt="" src="<?= $page->img ?>" data-holder-rendered="true">
 </div>
 </body>
 </html>

@@ -115,25 +115,9 @@ class PageRepository
     }
 
 
-    public function supprimer($id)
-    {
-        $sql = "
-        DELETE
-        FROM
-          `page`
-        WHERE
-          `id`= :id
-        ";
-
-        $stmt = $this->PDO->prepare($sql);
-        $stmt->bindParam(':id', $id);
-        $stmt->execute();
-    }
-
-
     public function modifier($data)
     {
-        $sql="
+        $sql = "
         UPDATE
         `page`
         SET
@@ -158,6 +142,21 @@ class PageRepository
         $stmt->bindValue(':span_class', $data['span_class'], \PDO::PARAM_STR);
         $stmt->bindValue(':id', $data['page_id'], \PDO::PARAM_INT);
 
+        $stmt->execute();
+    }
+
+    public function supprimer($id)
+    {
+        $sql = "
+        DELETE
+        FROM
+          `page`
+        WHERE
+          `id`= :id
+        ";
+
+        $stmt = $this->PDO->prepare($sql);
+        $stmt->bindParam(':id', $id);
         $stmt->execute();
     }
 }

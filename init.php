@@ -1,13 +1,12 @@
-
 <?php
 // inclusion de l'autoload composer
 // pour inclusion automatique de classes
-require_once __DIR__."/vendor/autoload.php";
+require_once __DIR__ . "/vendor/autoload.php";
 // connexion a la base de donnees
-try{
-    $pdo = new \PDO("mysql:host=localhost;dbname=kandt","root","root");
+try {
+    $pdo = new \PDO("mysql:host=localhost;dbname=kandt", "root", "root");
     $pdo->query('SET NAMES \'utf8\'');
-} catch(PDOException $e){
+} catch (PDOException $e) {
     die($e->getMessage());
 }
 /**
@@ -23,6 +22,7 @@ function isActive($value1, $value2)
         return '';
     }
 }
+
 /**
  * @param $value1
  * @param $value2
