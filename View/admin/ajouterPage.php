@@ -51,7 +51,7 @@
         </fieldset>
         <fieldset class="form-group">
             <label for="formGroupExampleInput">Etat</label>
-            <input type="text" class="form-control" name="span_text"
+            <input type="text" class="form-control" name="span_class"
                    placeholder="primary, success, info, warning, danger">
         </fieldset>
         <fieldset class="form-group">

@@ -86,6 +86,7 @@ class PageRepository
         $stmt->bindParam(':span_text', $data['span_text'], \PDO::PARAM_STR);
         $stmt->bindParam(':span_class', $data['span_class'], \PDO::PARAM_STR);
         $stmt->execute();
+
         return $this->PDO->lastInsertId();
     }
 
